@@ -108,7 +108,7 @@ IntStream.range(1, 4)
 // a3
 ```
 
-下面是组合示例：浮点数据流首先映射被整数数据流，之后映射为字符串的对象数据流：
+下面是组合示例：浮点数据流首先映射为整数数据流，之后映射为字符串的对象数据流：
 
 ```java
 Stream.of(1.0, 2.0, 3.0)
@@ -535,7 +535,7 @@ foos.stream()
 // Bar3 <- Foo3
 ```
 
-像你看到的那样，我们成地将含有三个`foo`对象中的流转换为含有九个`bar`对象的流。
+像你看到的那样，我们成功地将含有三个`foo`对象中的流转换为含有九个`bar`对象的流。
 
 最后，上面的代码示例可以简化为流式操作的单一流水线：
 
@@ -549,7 +549,7 @@ IntStream.range(1, 4)
     .forEach(b -> System.out.println(b.name));
 ```
 
-`flatMap`也可用于Java8引入的`Optional`类。可选的`flatMap`操作返回一个`Optional`或其他类型的对象。所以它可以用于避免烦人的`null`检查。
+`flatMap`也可用于Java8引入的`Optional`类。`Optional`的`flatMap`操作返回一个`Optional`或其他类型的对象。所以它可以用于避免烦人的`null`检查。
 
 考虑像这样更复杂的层次结构：
 
@@ -576,7 +576,7 @@ if (outer != null && outer.nested != null && outer.nested.inner != null) {
 }
 ```
 
-可以使用可选的`flatMap`操作来完成相同的行为：
+可以使用`Optional`的`flatMap`操作来完成相同的行为：
 
 ```java
 Optional.of(new Outer())
