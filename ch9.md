@@ -1,4 +1,4 @@
-# 使用Intellij IDEA 修复Java8的数据流问题
+# 使用Intellij IDEA 解决Java8的数据流问题
 
 > 原文：[Fixing Java 8 Stream Gotchas with IntelliJ IDEA](http://winterbe.com/posts/2015/03/05/fixing-java-8-stream-gotchas-with-intellij-idea/) 
 
@@ -74,7 +74,7 @@ IntelliJ IDEA自带了一个便利的特性，叫做实时模板（Live Template
 
 特殊的变量`$END$`指定在使用模板之后的光标位置，所以你可以直接在这个位置上打字，例如，定义连接分隔符。
 
-> 提示：你应该开启"Add unambiguous imports on the fly"（自动添加模糊的导入语句）选项，便于让IDEA自动添加`java.util.stream.Collectors`的导入语句。选项在`Editor → General → Auto Import`中。
+> 提示：你应该开启"Add unambiguous imports on the fly"（自动添加明确的导入）选项，便于让IDEA自动添加`java.util.stream.Collectors`的导入语句。选项在`Editor → General → Auto Import`中。
 
 让我们在实际工作中看看这两个模板：
 
