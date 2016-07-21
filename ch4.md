@@ -323,8 +323,8 @@ executor.scheduleWithFixedDelay(task, 0, 1, TimeUnit.SECONDS);
 
 这个例子调度了一个任务，并在一次执行的结束和下一次执行的开始之间设置了一个1分钟的固定延迟。初始化延迟为0，任务执行时间为0。所以我们分别在0s,3s,6s,9s等间隔处结束一次执行。如你所见，`scheduleWithFixedDelay()`在你不能预测调度任务的执行时长时是很有用的。
 
-这是并发系列教程的第以部分。我推荐你亲手实践一下上面的代码示例。你可以从 [Github](https://github.com/winterbe/java8-tutorial) 上找到这篇文章中所有的代码示例，所以欢迎你fork这个repo，[给我星星](https://github.com/winterbe/java8-tutorial/stargazers)。
+这是并发系列教程的第一部分。我推荐你亲手实践一下上面的代码示例。你可以从 [Github](https://github.com/winterbe/java8-tutorial) 上找到这篇文章中所有的代码示例，所以欢迎你fork这个repo，[给我星星](https://github.com/winterbe/java8-tutorial/stargazers)。
 
-我希望你会喜欢这篇文章。如果你有任何的问题都可以在下面评论或者通过 [Twitter](https://twitter.com/benontherun) 给我回复。
+我希望你会喜欢这篇文章。如果你有任何的问题都可以在下面评论或者通过 [Twitter](https://twitter.com/winterbe_) 给我回复。
 
 
