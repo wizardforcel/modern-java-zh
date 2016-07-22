@@ -4,7 +4,7 @@
 
 原文：[java8-tutorial](https://github.com/winterbe/java8-tutorial)
 
-译者：[飞龙](https://github.com/)
+译者：[飞龙](https://github.com/) 等
 
 + [在线阅读](https://www.gitbook.com/book/wizardforcel/modern-java/details)
 + [PDF格式](https://www.gitbook.com/download/pdf/book/wizardforcel/modern-java)
