@@ -1,4 +1,4 @@
-# Java8并发教程：Threads和Executors
+# Java 8 并发教程：线程和执行器
 
 > 原文：[Java 8 Concurrency Tutorial: Threads and Executors](http://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/)
 

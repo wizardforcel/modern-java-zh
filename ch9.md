@@ -1,4 +1,4 @@
-# 使用Intellij IDEA 解决Java8的数据流问题
+# 使用 Intellij IDEA 解决 Java 8 的数据流问题
 
 > 原文：[Fixing Java 8 Stream Gotchas with IntelliJ IDEA](http://winterbe.com/posts/2015/03/05/fixing-java-8-stream-gotchas-with-intellij-idea/) 
 
