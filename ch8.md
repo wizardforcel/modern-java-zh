@@ -88,4 +88,4 @@ public static <T> Optional<T> resolve(Supplier<T> resolver) {
 
 像往常一样，上面的示例代码都[托管在 GitHub](https://github.com/winterbe/java8-tutorial)。
 
-祝编码愉快！
+祝编程愉快！
