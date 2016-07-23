@@ -1,25 +1,25 @@
-# Java 8 API Ê¾Àý£º×Ö·û´®¡¢ÊýÖµ¡¢ËãÊõºÍÎÄ¼þ
+# Java 8 API ç¤ºä¾‹ï¼šå­—ç¬¦ä¸²ã€æ•°å€¼ã€ç®—æœ¯å’Œæ–‡ä»¶
 
-> Ô­ÎÄ£º[Java 8 API by Example: Strings, Numbers, Math and Files](http://winterbe.com/posts/2015/03/25/java8-examples-string-number-math-files/) 
+> åŽŸæ–‡ï¼š[Java 8 API by Example: Strings, Numbers, Math and Files](http://winterbe.com/posts/2015/03/25/java8-examples-string-number-math-files/) 
 
-> ÒëÕß£º[·ÉÁú](https://github.com/wizardforcel)  
+> è¯‘è€…ï¼š[é£žé¾™](https://github.com/wizardforcel)  
 
-> Ð­Òé£º[CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+> åè®®ï¼š[CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-´óÁ¿µÄ½Ì³ÌºÍÎÄÕÂ¶¼Éæ¼°µ½Java8ÖÐ×îÖØÒªµÄ¸Ä±ä£¬ÀýÈç[lambda±í´ïÊ½](ch1.md)ºÍ[º¯ÊýÊ½Êý¾ÝÁ÷](ch2.md)¡£µ«ÊÇ´ËÍâÐí¶àÏÖ´æµÄÀàÔÚ[JDK 8 API](http://winterbe.com/posts/2014/03/29/jdk8-api-explorer/)ÖÐÒ²ÓÐËù¸Ä½ø£¬´øÓÐÒ»Ð©ÊµÓÃµÄÌØÐÔºÍ·½·¨¡£
+å¤§é‡çš„æ•™ç¨‹å’Œæ–‡ç« éƒ½æ¶‰åŠåˆ°Java8ä¸­æœ€é‡è¦çš„æ”¹å˜ï¼Œä¾‹å¦‚[lambdaè¡¨è¾¾å¼](ch1.md)å’Œ[å‡½æ•°å¼æ•°æ®æµ](ch2.md)ã€‚ä½†æ˜¯æ­¤å¤–è®¸å¤šçŽ°å­˜çš„ç±»åœ¨[JDK 8 API](http://winterbe.com/posts/2014/03/29/jdk8-api-explorer/)ä¸­ä¹Ÿæœ‰æ‰€æ”¹è¿›ï¼Œå¸¦æœ‰ä¸€äº›å®žç”¨çš„ç‰¹æ€§å’Œæ–¹æ³•ã€‚
 
-ÕâÆª½Ì³ÌÉæ¼°µ½Java 8 APIÖÐµÄÄÇÐ©Ð¡ÐÞ¸Ä -- Ã¿¸ö¶¼Ê¹ÓÃ¼òµ¥Ò×¶®µÄ´úÂëÊ¾ÀýÀ´ÃèÊö¡£ÈÃÎÒÃÇºÃºÃ¿´Ò»¿´×Ö·û´®¡¢ÊýÖµ¡¢ËãÊõºÍÎÄ¼þ¡£
+è¿™ç¯‡æ•™ç¨‹æ¶‰åŠåˆ°Java 8 APIä¸­çš„é‚£äº›å°ä¿®æ”¹ -- æ¯ä¸ªéƒ½ä½¿ç”¨ç®€å•æ˜“æ‡‚çš„ä»£ç ç¤ºä¾‹æ¥æè¿°ã€‚è®©æˆ‘ä»¬å¥½å¥½çœ‹ä¸€çœ‹å­—ç¬¦ä¸²ã€æ•°å€¼ã€ç®—æœ¯å’Œæ–‡ä»¶ã€‚
 
-## ´¦Àí×Ö·û´®
+## å¤„ç†å­—ç¬¦ä¸²
 
-Á½¸öÐÂµÄ·½·¨¿ÉÔÚ×Ö·û´®ÀàÉÏÊ¹ÓÃ£º`join`ºÍ`chars`¡£µÚÒ»¸ö·½·¨Ê¹ÓÃÖ¸¶¨µÄ·Ö¸ô·û£¬½«ÈÎºÎÊýÁ¿µÄ×Ö·û´®Á¬½ÓÎªÒ»¸ö×Ö·û´®¡£
+ä¸¤ä¸ªæ–°çš„æ–¹æ³•å¯åœ¨å­—ç¬¦ä¸²ç±»ä¸Šä½¿ç”¨ï¼š`join`å’Œ`chars`ã€‚ç¬¬ä¸€ä¸ªæ–¹æ³•ä½¿ç”¨æŒ‡å®šçš„åˆ†éš”ç¬¦ï¼Œå°†ä»»ä½•æ•°é‡çš„å­—ç¬¦ä¸²è¿žæŽ¥ä¸ºä¸€ä¸ªå­—ç¬¦ä¸²ã€‚
 
 ```java
 String.join(":", "foobar", "foo", "bar");
 // => foobar:foo:bar
 ```
 
-µÚ¶þ¸ö·½·¨`chars`´Ó×Ö·û´®ËùÓÐ×Ö·û´´½¨Êý¾ÝÁ÷£¬ËùÒÔÄã¿ÉÒÔÔÚÕâÐ©×Ö·ûÉÏÊ¹ÓÃÁ÷Ê½²Ù×÷¡£
+ç¬¬äºŒä¸ªæ–¹æ³•`chars`ä»Žå­—ç¬¦ä¸²æ‰€æœ‰å­—ç¬¦åˆ›å»ºæ•°æ®æµï¼Œæ‰€ä»¥ä½ å¯ä»¥åœ¨è¿™äº›å­—ç¬¦ä¸Šä½¿ç”¨æµå¼æ“ä½œã€‚
 
 ```java
 "foobar:foo:bar"
@@ -31,7 +31,7 @@ String.join(":", "foobar", "foo", "bar");
 // => :abfor
 ```
 
-²»½ö½öÊÇ×Ö·û´®£¬ÕýÔò±í´ïÊ½Ä£Ê½´®Ò²ÄÜÊÜÒæÓÚÊý¾ÝÁ÷¡£ÎÒÃÇ¿ÉÒÔ·Ö¸îÈÎºÎÄ£Ê½´®£¬²¢´´½¨Êý¾ÝÁ÷À´´¦ÀíËüÃÇ£¬¶ø²»ÊÇ½«×Ö·û´®·Ö¸îÎªµ¥¸ö×Ö·ûµÄÊý¾ÝÁ÷£¬ÏñÏÂÃæÕâÑù£º
+ä¸ä»…ä»…æ˜¯å­—ç¬¦ä¸²ï¼Œæ­£åˆ™è¡¨è¾¾å¼æ¨¡å¼ä¸²ä¹Ÿèƒ½å—ç›ŠäºŽæ•°æ®æµã€‚æˆ‘ä»¬å¯ä»¥åˆ†å‰²ä»»ä½•æ¨¡å¼ä¸²ï¼Œå¹¶åˆ›å»ºæ•°æ®æµæ¥å¤„ç†å®ƒä»¬ï¼Œè€Œä¸æ˜¯å°†å­—ç¬¦ä¸²åˆ†å‰²ä¸ºå•ä¸ªå­—ç¬¦çš„æ•°æ®æµï¼Œåƒä¸‹é¢è¿™æ ·ï¼š
 
 ```java
 Pattern.compile(":")
@@ -42,7 +42,7 @@ Pattern.compile(":")
 // => bar:foobar
 ```
 
-´ËÍâ£¬ÕýÔòÄ£Ê½´®¿ÉÒÔ×ª»»ÎªÎ½´Ê¡£ÕâÐ©Î½´Ê¿ÉÒÔÏñÏÂÃæÄÇÑùÓÃÓÚ¹ýÂË×Ö·û´®Á÷£º
+æ­¤å¤–ï¼Œæ­£åˆ™æ¨¡å¼ä¸²å¯ä»¥è½¬æ¢ä¸ºè°“è¯ã€‚è¿™äº›è°“è¯å¯ä»¥åƒä¸‹é¢é‚£æ ·ç”¨äºŽè¿‡æ»¤å­—ç¬¦ä¸²æµï¼š
 
 ```java
 Pattern pattern = Pattern.compile(".*@gmail\\.com");
@@ -52,22 +52,22 @@ Stream.of("bob@gmail.com", "alice@hotmail.com")
 // => 1
 ```
 
-ÉÏÃæµÄÄ£Ê½´®½ÓÊÜÈÎºÎÒÔ`@gmail.com`½áÎ²µÄ×Ö·û´®£¬²¢ÇÒÖ®ºóÓÃ×÷Java8µÄ`Predicate`À´¹ýÂËµç×ÓÓÊ¼þµØÖ·Á÷¡£
+ä¸Šé¢çš„æ¨¡å¼ä¸²æŽ¥å—ä»»ä½•ä»¥`@gmail.com`ç»“å°¾çš„å­—ç¬¦ä¸²ï¼Œå¹¶ä¸”ä¹‹åŽç”¨ä½œJava8çš„`Predicate`æ¥è¿‡æ»¤ç”µå­é‚®ä»¶åœ°å€æµã€‚
 
-## ´¦ÀíÊýÖµ
+## å¤„ç†æ•°å€¼
 
-Java8Ìí¼ÓÁË¶ÔÎÞ·ûºÅÊýµÄ¶îÍâÖ§³Ö¡£JavaÖÐµÄÊýÖµ×ÜÊÇÓÐ·ûºÅµÄ£¬ÀýÈç£¬ÈÃÎÒÃÇÀ´¹Û²ì`Integer`£º
+Java8æ·»åŠ äº†å¯¹æ— ç¬¦å·æ•°çš„é¢å¤–æ”¯æŒã€‚Javaä¸­çš„æ•°å€¼æ€»æ˜¯æœ‰ç¬¦å·çš„ï¼Œä¾‹å¦‚ï¼Œè®©æˆ‘ä»¬æ¥è§‚å¯Ÿ`Integer`ï¼š
 
-`int`¿É±íÊ¾×î¶à`2 ** 32`¸öÊý¡£JavaÖÐµÄÊýÖµÄ¬ÈÏÎªÓÐ·ûºÅµÄ£¬ËùÒÔ×îºóÒ»¸ö¶þ½øÖÆÊý×Ö±íÊ¾·ûºÅ£¨0ÎªÕýÊý£¬1Îª¸ºÊý£©¡£ËùÒÔ´ÓÊ®½øÖÆµÄ0¿ªÊ¼£¬×î´óµÄÓÐ·ûºÅÕýÕûÊýÎª`2 ** 31 - 1`¡£
+`int`å¯è¡¨ç¤ºæœ€å¤š`2 ** 32`ä¸ªæ•°ã€‚Javaä¸­çš„æ•°å€¼é»˜è®¤ä¸ºæœ‰ç¬¦å·çš„ï¼Œæ‰€ä»¥æœ€åŽä¸€ä¸ªäºŒè¿›åˆ¶æ•°å­—è¡¨ç¤ºç¬¦å·ï¼ˆ0ä¸ºæ­£æ•°ï¼Œ1ä¸ºè´Ÿæ•°ï¼‰ã€‚æ‰€ä»¥ä»Žåè¿›åˆ¶çš„0å¼€å§‹ï¼Œæœ€å¤§çš„æœ‰ç¬¦å·æ­£æ•´æ•°ä¸º`2 ** 31 - 1`ã€‚
 
-Äã¿ÉÒÔÍ¨¹ý`Integer.MAX_VALUE`À´·ÃÎÊËü£º
+ä½ å¯ä»¥é€šè¿‡`Integer.MAX_VALUE`æ¥è®¿é—®å®ƒï¼š
 
 ```java
 System.out.println(Integer.MAX_VALUE);      // 2147483647
 System.out.println(Integer.MAX_VALUE + 1);  // -2147483648
 ```
 
-Java8Ìí¼ÓÁË½âÎöÎÞ·ûºÅÕûÊýµÄÖ§³Ö£¬ÈÃÎÒÃÇ¿´¿´ËüÈçºÎ¹¤×÷£º
+Java8æ·»åŠ äº†è§£æžæ— ç¬¦å·æ•´æ•°çš„æ”¯æŒï¼Œè®©æˆ‘ä»¬çœ‹çœ‹å®ƒå¦‚ä½•å·¥ä½œï¼š
 
 ```java
 long maxUnsignedInt = (1l << 32) - 1;
@@ -76,9 +76,9 @@ int unsignedInt = Integer.parseUnsignedInt(string, 10);
 String string2 = Integer.toUnsignedString(unsignedInt, 10);
 ```
 
-¾ÍÏñÄã¿´µ½µÄÄÇÑù£¬ÏÖÔÚ¿ÉÒÔ½«×î´óµÄÎÞ·ûºÅÊý`2 ** 32 - 1`½âÎöÎªÕûÊý¡£¶øÇÒÄãÒ²¿ÉÒÔ½«Õâ¸öÊýÖµ×ª»»»ØÎÞ·ûºÅÊýµÄ×Ö·û´®±íÊ¾¡£
+å°±åƒä½ çœ‹åˆ°çš„é‚£æ ·ï¼ŒçŽ°åœ¨å¯ä»¥å°†æœ€å¤§çš„æ— ç¬¦å·æ•°`2 ** 32 - 1`è§£æžä¸ºæ•´æ•°ã€‚è€Œä¸”ä½ ä¹Ÿå¯ä»¥å°†è¿™ä¸ªæ•°å€¼è½¬æ¢å›žæ— ç¬¦å·æ•°çš„å­—ç¬¦ä¸²è¡¨ç¤ºã€‚
 
-ÕâÔÚÖ®Ç°²»¿ÉÄÜÊ¹ÓÃ`parseInt`Íê³É£¬¾ÍÏñÕâ¸öÀý×ÓÕ¹Ê¾µÄÄÇÑù£º
+è¿™åœ¨ä¹‹å‰ä¸å¯èƒ½ä½¿ç”¨`parseInt`å®Œæˆï¼Œå°±åƒè¿™ä¸ªä¾‹å­å±•ç¤ºçš„é‚£æ ·ï¼š
 
 ```java
 try {
@@ -89,20 +89,20 @@ catch (NumberFormatException e) {
 }
 ```
 
-Õâ¸öÊýÖµ²»¿É½âÎöÎªÓÐ·ûºÅÕûÊý£¬ÒòÎªËü³¬³öÁË×î´ó·¶Î§`2 ** 31 - 1`¡£
+è¿™ä¸ªæ•°å€¼ä¸å¯è§£æžä¸ºæœ‰ç¬¦å·æ•´æ•°ï¼Œå› ä¸ºå®ƒè¶…å‡ºäº†æœ€å¤§èŒƒå›´`2 ** 31 - 1`ã€‚
 
-## ËãÊõÔËËã
+## ç®—æœ¯è¿ç®—
 
-`Math`¹¤¾ßÀàÐÂÔöÁËÒ»Ð©·½·¨À´´¦ÀíÊýÖµÒç³ö¡£ÕâÊÇÊ²Ã´ÒâË¼ÄØ£¿ÎÒÃÇÒÑ¾­¿´µ½ÁËËùÓÐÊýÖµÀàÐÍ¶¼ÓÐ×î´óÖµ¡£ËùÒÔµ±ËãÊõÔËËãµÄ½á¹û²»ÄÜ±»ËüµÄ´óÐ¡×°ÏÂÊ±£¬»á·¢ÉúÊ²Ã´ÄØ£¿
+`Math`å·¥å…·ç±»æ–°å¢žäº†ä¸€äº›æ–¹æ³•æ¥å¤„ç†æ•°å€¼æº¢å‡ºã€‚è¿™æ˜¯ä»€ä¹ˆæ„æ€å‘¢ï¼Ÿæˆ‘ä»¬å·²ç»çœ‹åˆ°äº†æ‰€æœ‰æ•°å€¼ç±»åž‹éƒ½æœ‰æœ€å¤§å€¼ã€‚æ‰€ä»¥å½“ç®—æœ¯è¿ç®—çš„ç»“æžœä¸èƒ½è¢«å®ƒçš„å¤§å°è£…ä¸‹æ—¶ï¼Œä¼šå‘ç”Ÿä»€ä¹ˆå‘¢ï¼Ÿ
 
 ```java
 System.out.println(Integer.MAX_VALUE);      // 2147483647
 System.out.println(Integer.MAX_VALUE + 1);  // -2147483648
 ```
 
-¾ÍÏñÄã¿´µ½µÄÄÇÑù£¬·¢ÉúÁËÕûÊýÒç³ö£¬ÕâÍ¨³£ÊÇÎÒÃÇ²»Ô¸Òâ¿´µ½µÄ¡£
+å°±åƒä½ çœ‹åˆ°çš„é‚£æ ·ï¼Œå‘ç”Ÿäº†æ•´æ•°æº¢å‡ºï¼Œè¿™é€šå¸¸æ˜¯æˆ‘ä»¬ä¸æ„¿æ„çœ‹åˆ°çš„ã€‚
 
-Java8Ìí¼ÓÁËÑÏ¸ñÊýÑ§ÔËËãµÄÖ§³ÖÀ´½â¾öÕâ¸öÎÊÌâ¡£`Math`À©Õ¹ÁËÒ»Ð©·½·¨£¬ËüÃÇÈ«²¿ÒÔ`exact`½áÎ²£¬ÀýÈç`addExact`¡£µ±ÔËËã½á¹û²»ÄÜ±»ÊýÖµÀàÐÍ×°ÏÂÊ±£¬ÕâÐ©·½·¨Í¨¹ýÅ×³ö`ArithmeticException`Òì³£À´ºÏÀíµØ´¦ÀíÒç³ö¡£
+Java8æ·»åŠ äº†ä¸¥æ ¼æ•°å­¦è¿ç®—çš„æ”¯æŒæ¥è§£å†³è¿™ä¸ªé—®é¢˜ã€‚`Math`æ‰©å±•äº†ä¸€äº›æ–¹æ³•ï¼Œå®ƒä»¬å…¨éƒ¨ä»¥`exact`ç»“å°¾ï¼Œä¾‹å¦‚`addExact`ã€‚å½“è¿ç®—ç»“æžœä¸èƒ½è¢«æ•°å€¼ç±»åž‹è£…ä¸‹æ—¶ï¼Œè¿™äº›æ–¹æ³•é€šè¿‡æŠ›å‡º`ArithmeticException`å¼‚å¸¸æ¥åˆç†åœ°å¤„ç†æº¢å‡ºã€‚
 
 ```java
 try {
@@ -114,7 +114,7 @@ catch (ArithmeticException e) {
 }
 ```
 
-µ±³¢ÊÔÍ¨¹ý`toIntExact`½«³¤ÕûÊý×ª»»ÎªÕûÊýÊ±£¬¿ÉÄÜ»áÅ×³öÍ¬ÑùµÄÒì³££º
+å½“å°è¯•é€šè¿‡`toIntExact`å°†é•¿æ•´æ•°è½¬æ¢ä¸ºæ•´æ•°æ—¶ï¼Œå¯èƒ½ä¼šæŠ›å‡ºåŒæ ·çš„å¼‚å¸¸ï¼š
 
 ```java
 try {
@@ -126,13 +126,13 @@ catch (ArithmeticException e) {
 }
 ```
 
-## ´¦ÀíÎÄ¼þ
+## å¤„ç†æ–‡ä»¶
 
-`Files`¹¤¾ßÀàÊ×´ÎÔÚJava7ÖÐÒýÈë£¬×÷ÎªNIOµÄÒ»²¿·Ö¡£JDK8 APIÌí¼ÓÁËÒ»Ð©¶îÍâµÄ·½·¨£¬ËüÃÇ¿ÉÒÔ½«ÎÄ¼þÓÃÓÚº¯ÊýÊ½Êý¾ÝÁ÷¡£ÈÃÎÒÃÇÉîÈëÌ½Ë÷Ò»Ð©´úÂëÊ¾Àý¡£
+`Files`å·¥å…·ç±»é¦–æ¬¡åœ¨Java7ä¸­å¼•å…¥ï¼Œä½œä¸ºNIOçš„ä¸€éƒ¨åˆ†ã€‚JDK8 APIæ·»åŠ äº†ä¸€äº›é¢å¤–çš„æ–¹æ³•ï¼Œå®ƒä»¬å¯ä»¥å°†æ–‡ä»¶ç”¨äºŽå‡½æ•°å¼æ•°æ®æµã€‚è®©æˆ‘ä»¬æ·±å…¥æŽ¢ç´¢ä¸€äº›ä»£ç ç¤ºä¾‹ã€‚
 
-### ÁÐ³öÎÄ¼þ
+### åˆ—å‡ºæ–‡ä»¶
 
-`Files.list`·½·¨½«Ö¸¶¨Ä¿Â¼µÄËùÓÐÂ·¾¶×ª»»ÎªÊý¾ÝÁ÷£¬±ãÓÚÎÒÃÇÔÚÎÄ¼þÏµÍ³µÄÄÚÈÝÉÏÊ¹ÓÃÀàËÆ`filter`ºÍ`sorted`µÄÁ÷²Ù×÷¡£
+`Files.list`æ–¹æ³•å°†æŒ‡å®šç›®å½•çš„æ‰€æœ‰è·¯å¾„è½¬æ¢ä¸ºæ•°æ®æµï¼Œä¾¿äºŽæˆ‘ä»¬åœ¨æ–‡ä»¶ç³»ç»Ÿçš„å†…å®¹ä¸Šä½¿ç”¨ç±»ä¼¼`filter`å’Œ`sorted`çš„æµæ“ä½œã€‚
 
 ```java
 try (Stream<Path> stream = Files.list(Paths.get(""))) {
@@ -145,15 +145,15 @@ try (Stream<Path> stream = Files.list(Paths.get(""))) {
 }
 ```
 
-ÉÏÃæµÄÀý×ÓÁÐ³öÁËµ±Ç°¹¤×÷Ä¿Â¼µÄËùÓÐÎÄ¼þ£¬Ö®ºó½«Ã¿¸öÂ·¾¶¶¼Ó³ÉäÎªËüµÄ×Ö·û´®±íÊ¾¡£Ö®ºó½á¹û±»¹ýÂË¡¢ÅÅÐò£¬×îºóÁ¬½ÓÎªÒ»¸ö×Ö·û´®¡£Èç¹ûÄã»¹²»ÊìÏ¤º¯ÊýÊ½Êý¾ÝÁ÷£¬ÄãÓ¦¸ÃÔÄ¶ÁÎÒµÄ[Java8Êý¾ÝÁ÷½Ì³Ì](ch2.md)¡£
+ä¸Šé¢çš„ä¾‹å­åˆ—å‡ºäº†å½“å‰å·¥ä½œç›®å½•çš„æ‰€æœ‰æ–‡ä»¶ï¼Œä¹‹åŽå°†æ¯ä¸ªè·¯å¾„éƒ½æ˜ å°„ä¸ºå®ƒçš„å­—ç¬¦ä¸²è¡¨ç¤ºã€‚ä¹‹åŽç»“æžœè¢«è¿‡æ»¤ã€æŽ’åºï¼Œæœ€åŽè¿žæŽ¥ä¸ºä¸€ä¸ªå­—ç¬¦ä¸²ã€‚å¦‚æžœä½ è¿˜ä¸ç†Ÿæ‚‰å‡½æ•°å¼æ•°æ®æµï¼Œä½ åº”è¯¥é˜…è¯»æˆ‘çš„[Java8æ•°æ®æµæ•™ç¨‹](ch2.md)ã€‚
 
-Äã¿ÉÄÜÒÑ¾­×¢Òâµ½£¬Êý¾ÝÁ÷µÄ´´½¨°ü×°ÔÚ`try-with`Óï¾äÖÐ¡£Êý¾ÝÁ÷ÊµÏÖÁË`AutoCloseable`£¬²¢ÇÒÕâÀïÎÒÃÇÐèÒªÏÔÊ½¹Ø±ÕÊý¾ÝÁ÷£¬ÒòÎªËü»ùÓÚIO²Ù×÷¡£
+ä½ å¯èƒ½å·²ç»æ³¨æ„åˆ°ï¼Œæ•°æ®æµçš„åˆ›å»ºåŒ…è£…åœ¨`try-with`è¯­å¥ä¸­ã€‚æ•°æ®æµå®žçŽ°äº†`AutoCloseable`ï¼Œå¹¶ä¸”è¿™é‡Œæˆ‘ä»¬éœ€è¦æ˜¾å¼å…³é—­æ•°æ®æµï¼Œå› ä¸ºå®ƒåŸºäºŽIOæ“ä½œã€‚
 
-> ·µ»ØµÄÊý¾ÝÁ÷ÊÇ`DirectoryStream`µÄ·â×°¡£Èç¹ûÐèÒª¼°Ê±´¦ÀíÎÄ¼þ×ÊÔ´£¬¾ÍÓ¦¸ÃÊ¹ÓÃ`try-with`½á¹¹À´È·±£ÔÚÁ÷Ê½²Ù×÷Íê³Éºó£¬Êý¾ÝÁ÷µÄ`close`·½·¨±»µ÷ÓÃ¡£
+> è¿”å›žçš„æ•°æ®æµæ˜¯`DirectoryStream`çš„å°è£…ã€‚å¦‚æžœéœ€è¦åŠæ—¶å¤„ç†æ–‡ä»¶èµ„æºï¼Œå°±åº”è¯¥ä½¿ç”¨`try-with`ç»“æž„æ¥ç¡®ä¿åœ¨æµå¼æ“ä½œå®ŒæˆåŽï¼Œæ•°æ®æµçš„`close`æ–¹æ³•è¢«è°ƒç”¨ã€‚
 
-### ²éÕÒÎÄ¼þ
+### æŸ¥æ‰¾æ–‡ä»¶
 
-ÏÂÃæµÄÀý×ÓÑÝÊ¾ÁËÈçºÎ²éÕÒÔÚÄ¿Â¼¼°Æä×ÓÄ¿Â¼ÏÂµÄÎÄ¼þ£º
+ä¸‹é¢çš„ä¾‹å­æ¼”ç¤ºäº†å¦‚ä½•æŸ¥æ‰¾åœ¨ç›®å½•åŠå…¶å­ç›®å½•ä¸‹çš„æ–‡ä»¶ï¼š
 
 ```java
 Path start = Paths.get("");
@@ -168,9 +168,9 @@ try (Stream<Path> stream = Files.find(start, maxDepth, (path, attr) ->
 }
 ```
 
-`find`·½·¨½ÓÊÜÈý¸ö²ÎÊý£ºÄ¿Â¼Â·¾¶`start`ÊÇÆðÊ¼µã£¬`maxDepth`¶¨ÒåÁË×î´óËÑË÷Éî¶È¡£µÚÈý¸ö²ÎÊýÊÇÒ»¸öÆ¥ÅäÎ½´Ê£¬¶¨ÒåÁËËÑË÷µÄÂß¼­¡£ÉÏÃæµÄÀý×ÓÖÐ£¬ÎÒÃÇËÑË÷ÁËËùÓÐJavaScirptÎÄ¼þ£¨ÒÔ`.js`½áÎ²µÄÎÄ¼þÃû£©¡£
+`find`æ–¹æ³•æŽ¥å—ä¸‰ä¸ªå‚æ•°ï¼šç›®å½•è·¯å¾„`start`æ˜¯èµ·å§‹ç‚¹ï¼Œ`maxDepth`å®šä¹‰äº†æœ€å¤§æœç´¢æ·±åº¦ã€‚ç¬¬ä¸‰ä¸ªå‚æ•°æ˜¯ä¸€ä¸ªåŒ¹é…è°“è¯ï¼Œå®šä¹‰äº†æœç´¢çš„é€»è¾‘ã€‚ä¸Šé¢çš„ä¾‹å­ä¸­ï¼Œæˆ‘ä»¬æœç´¢äº†æ‰€æœ‰JavaScirptæ–‡ä»¶ï¼ˆä»¥`.js`ç»“å°¾çš„æ–‡ä»¶åï¼‰ã€‚
 
-ÎÒÃÇ¿ÉÒÔÊ¹ÓÃ`Files.walk`·½·¨À´Íê³ÉÏàÍ¬µÄÐÐÎª¡£Õâ¸ö·½·¨»á±éÀúÃ¿¸öÎÄ¼þ£¬¶ø²»ÐèÒª´«µÝËÑË÷Î½´Ê¡£
+æˆ‘ä»¬å¯ä»¥ä½¿ç”¨`Files.walk`æ–¹æ³•æ¥å®Œæˆç›¸åŒçš„è¡Œä¸ºã€‚è¿™ä¸ªæ–¹æ³•ä¼šéåŽ†æ¯ä¸ªæ–‡ä»¶ï¼Œè€Œä¸éœ€è¦ä¼ é€’æœç´¢è°“è¯ã€‚
 
 ```java
 Path start = Paths.get("");
@@ -185,11 +185,11 @@ try (Stream<Path> stream = Files.walk(start, maxDepth)) {
 }
 ```
 
-Õâ¸öÀý×ÓÖÐ£¬ÎÒÃÇÊ¹ÓÃÁËÁ÷Ê½²Ù×÷`filter`À´Íê³ÉºÍÉÏ¸öÀý×ÓÏàÍ¬µÄÐÐÎª¡£
+è¿™ä¸ªä¾‹å­ä¸­ï¼Œæˆ‘ä»¬ä½¿ç”¨äº†æµå¼æ“ä½œ`filter`æ¥å®Œæˆå’Œä¸Šä¸ªä¾‹å­ç›¸åŒçš„è¡Œä¸ºã€‚
 
-### ¶ÁÐ´ÎÄ¼þ
+### è¯»å†™æ–‡ä»¶
 
-½«ÎÄ±¾ÎÄ¼þ¶Áµ½ÄÚ´æ£¬ÒÔ¼°ÏòÎÄ±¾ÎÄ¼þÐ´Èë×Ö·û´®ÔÚJava 8 ÖÐÊÇ¼òµ¥µÄÈÎÎñ¡£²»ÐèÒªÔÙÈ¥°ÚÅª¶ÁÐ´Æ÷ÁË¡£`Files.readAllLines`´ÓÖ¸¶¨µÄÎÄ¼þ°ÑËùÓÐÐÐ¶Á½ø×Ö·û´®ÁÐ±íÖÐ¡£Äã¿ÉÒÔ¼òµ¥µØÐÞ¸ÄÕâ¸öÁÐ±í£¬²¢ÇÒ½«ËüÍ¨¹ý`Files.write`Ð´µ½ÁíÒ»¸öÎÄ¼þÖÐ£º
+å°†æ–‡æœ¬æ–‡ä»¶è¯»åˆ°å†…å­˜ï¼Œä»¥åŠå‘æ–‡æœ¬æ–‡ä»¶å†™å…¥å­—ç¬¦ä¸²åœ¨Java 8 ä¸­æ˜¯ç®€å•çš„ä»»åŠ¡ã€‚ä¸éœ€è¦å†åŽ»æ‘†å¼„è¯»å†™å™¨äº†ã€‚`Files.readAllLines`ä»ŽæŒ‡å®šçš„æ–‡ä»¶æŠŠæ‰€æœ‰è¡Œè¯»è¿›å­—ç¬¦ä¸²åˆ—è¡¨ä¸­ã€‚ä½ å¯ä»¥ç®€å•åœ°ä¿®æ”¹è¿™ä¸ªåˆ—è¡¨ï¼Œå¹¶ä¸”å°†å®ƒé€šè¿‡`Files.write`å†™åˆ°å¦ä¸€ä¸ªæ–‡ä»¶ä¸­ï¼š
 
 ```java
 List<String> lines = Files.readAllLines(Paths.get("res/nashorn1.js"));
@@ -197,9 +197,9 @@ lines.add("print('foobar');");
 Files.write(Paths.get("res/nashorn1-modified.js"), lines);
 ```
 
-Òª×¢ÒâÕâÐ©·½·¨¶ÔÄÚ´æ²¢²»Ê®·Ö¸ßÐ§£¬ÒòÎªÕû¸öÎÄ¼þ¶¼»á¶Á½øÄÚ´æ¡£ÎÄ¼þÔ½´ó£¬ËùÓÃµÄ¶ÑÇøÒ²¾ÍÔ½´ó¡£
+è¦æ³¨æ„è¿™äº›æ–¹æ³•å¯¹å†…å­˜å¹¶ä¸ååˆ†é«˜æ•ˆï¼Œå› ä¸ºæ•´ä¸ªæ–‡ä»¶éƒ½ä¼šè¯»è¿›å†…å­˜ã€‚æ–‡ä»¶è¶Šå¤§ï¼Œæ‰€ç”¨çš„å †åŒºä¹Ÿå°±è¶Šå¤§ã€‚
 
-Äã¿ÉÒÔÊ¹ÓÃ`Files.lines`·½·¨À´×÷ÎªÄÚ´æ¸ßÐ§µÄÌæ´ú¡£Õâ¸ö·½·¨¶ÁÈ¡Ã¿Ò»ÐÐ£¬²¢Ê¹ÓÃº¯ÊýÊ½Êý¾ÝÁ÷À´¶ÔÆäÁ÷Ê½´¦Àí£¬¶ø²»ÊÇÒ»´ÎÐÔ°ÑËùÓÐÐÐ¶¼¶Á½øÄÚ´æ¡£
+ä½ å¯ä»¥ä½¿ç”¨`Files.lines`æ–¹æ³•æ¥ä½œä¸ºå†…å­˜é«˜æ•ˆçš„æ›¿ä»£ã€‚è¿™ä¸ªæ–¹æ³•è¯»å–æ¯ä¸€è¡Œï¼Œå¹¶ä½¿ç”¨å‡½æ•°å¼æ•°æ®æµæ¥å¯¹å…¶æµå¼å¤„ç†ï¼Œè€Œä¸æ˜¯ä¸€æ¬¡æ€§æŠŠæ‰€æœ‰è¡Œéƒ½è¯»è¿›å†…å­˜ã€‚
 
 ```java
 try (Stream<String> stream = Files.lines(Paths.get("res/nashorn1.js"))) {
@@ -210,7 +210,7 @@ try (Stream<String> stream = Files.lines(Paths.get("res/nashorn1.js"))) {
 }
 ```
 
-Èç¹ûÄãÐèÒª¸ü¶àµÄ¾«Ï¸¿ØÖÆ£¬ÄãÐèÒª¹¹ÔìÒ»¸öÐÂµÄ`BufferedReader`À´´úÌæ£º
+å¦‚æžœä½ éœ€è¦æ›´å¤šçš„ç²¾ç»†æŽ§åˆ¶ï¼Œä½ éœ€è¦æž„é€ ä¸€ä¸ªæ–°çš„`BufferedReader`æ¥ä»£æ›¿ï¼š
 
 ```java
 Path path = Paths.get("res/nashorn1.js");
@@ -219,7 +219,7 @@ try (BufferedReader reader = Files.newBufferedReader(path)) {
 }
 ```
 
-»òÕß£¬ÄãÐèÒªÐ´ÈëÎÄ¼þÊ±£¬¼òµ¥µØ¹¹ÔìÒ»¸ö`BufferedWriter`À´´úÌæ£º
+æˆ–è€…ï¼Œä½ éœ€è¦å†™å…¥æ–‡ä»¶æ—¶ï¼Œç®€å•åœ°æž„é€ ä¸€ä¸ª`BufferedWriter`æ¥ä»£æ›¿ï¼š
 
 ```java
 Path path = Paths.get("res/output.js");
@@ -228,7 +228,7 @@ try (BufferedWriter writer = Files.newBufferedWriter(path)) {
 }
 ```
 
-`BufferedReader`Ò²¿ÉÒÔ·ÃÎÊº¯ÊýÊ½Êý¾ÝÁ÷¡£`lines`·½·¨ÔÚËüËùÓÐÐÐÉÏÃæ¹¹½¨Êý¾ÝÁ÷£º
+`BufferedReader`ä¹Ÿå¯ä»¥è®¿é—®å‡½æ•°å¼æ•°æ®æµã€‚`lines`æ–¹æ³•åœ¨å®ƒæ‰€æœ‰è¡Œä¸Šé¢æž„å»ºæ•°æ®æµï¼š
 
 ```java
 Path path = Paths.get("res/nashorn1.js");
@@ -241,10 +241,10 @@ try (BufferedReader reader = Files.newBufferedReader(path)) {
 }
 ```
 
-Ä¿Ç°ÎªÖ¹Äã¿ÉÒÔ¿´µ½Java8Ìá¹©ÁËÈý¸ö¼òµ¥µÄ·½·¨À´¶ÁÈ¡ÎÄ±¾ÎÄ¼þµÄÃ¿Ò»ÐÐ£¬Ê¹ÎÄ¼þ´¦Àí¸ü¼Ó±ã½Ý¡£
+ç›®å‰ä¸ºæ­¢ä½ å¯ä»¥çœ‹åˆ°Java8æä¾›äº†ä¸‰ä¸ªç®€å•çš„æ–¹æ³•æ¥è¯»å–æ–‡æœ¬æ–‡ä»¶çš„æ¯ä¸€è¡Œï¼Œä½¿æ–‡ä»¶å¤„ç†æ›´åŠ ä¾¿æ·ã€‚
 
-²»ÐÒµÄÊÇÄãÐèÒªÏÔÊ½Ê¹ÓÃ`try-with`Óï¾äÀ´¹Ø±ÕÎÄ¼þÁ÷£¬Õâ»áÊ¹Ê¾Àý´úÂëÓÐÐ©ÁèÂÒ¡£ÎÒÆÚ´ýº¯ÊýÊ½Êý¾ÝÁ÷¿ÉÒÔÔÚµ÷ÓÃÀàËÆ`count`ºÍ`collect`Ê±¿ÉÒÔ×Ô¶¯¹Ø±Õ£¬ÒòÎªÄã²»ÄÜÔÚÏàÍ¬Êý¾ÝÁ÷ÉÏµ÷ÓÃÖÕÖ¹²Ù×÷Á½´Î¡£
+ä¸å¹¸çš„æ˜¯ä½ éœ€è¦æ˜¾å¼ä½¿ç”¨`try-with`è¯­å¥æ¥å…³é—­æ–‡ä»¶æµï¼Œè¿™ä¼šä½¿ç¤ºä¾‹ä»£ç æœ‰äº›å‡Œä¹±ã€‚æˆ‘æœŸå¾…å‡½æ•°å¼æ•°æ®æµå¯ä»¥åœ¨è°ƒç”¨ç±»ä¼¼`count`å’Œ`collect`æ—¶å¯ä»¥è‡ªåŠ¨å…³é—­ï¼Œå› ä¸ºä½ ä¸èƒ½åœ¨ç›¸åŒæ•°æ®æµä¸Šè°ƒç”¨ç»ˆæ­¢æ“ä½œä¸¤æ¬¡ã€‚
 
-ÎÒÏ£ÍûÄãÄÜÏ²»¶ÕâÆªÎÄÕÂ¡£ËùÓÐÊ¾Àý´úÂë¶¼ÍÐ¹ÜÔÚ[Github](https://github.com/winterbe/java8-tutorial)ÉÏ£¬»¹ÓÐÀ´Ô´ÓÚÎÒ²©¿ÍÆäËü[Java8ÎÄÕÂ](http://winterbe.com/java/)µÄ´óÁ¿µÄ´úÂëÆ¬¶Î¡£Èç¹ûÕâÆªÎÄÕÂ¶ÔÄãÓÐËù°ïÖú£¬Çë[ÊÕ²Ø](https://github.com/winterbe/java8-tutorial)ÎÒµÄ²Ö¿â£¬²¢ÇÒÔÚTwitterÉÏ[¹Ø×¢ÎÒ](https://twitter.com/winterbe_)¡£
+æˆ‘å¸Œæœ›ä½ èƒ½å–œæ¬¢è¿™ç¯‡æ–‡ç« ã€‚æ‰€æœ‰ç¤ºä¾‹ä»£ç éƒ½æ‰˜ç®¡åœ¨[Github](https://github.com/winterbe/java8-tutorial)ä¸Šï¼Œè¿˜æœ‰æ¥æºäºŽæˆ‘åšå®¢å…¶å®ƒ[Java8æ–‡ç« ](http://winterbe.com/java/)çš„å¤§é‡çš„ä»£ç ç‰‡æ®µã€‚å¦‚æžœè¿™ç¯‡æ–‡ç« å¯¹ä½ æœ‰æ‰€å¸®åŠ©ï¼Œè¯·[æ”¶è—](https://github.com/winterbe/java8-tutorial)æˆ‘çš„ä»“åº“ï¼Œå¹¶ä¸”åœ¨Twitterä¸Š[å…³æ³¨æˆ‘](https://twitter.com/winterbe_)ã€‚
 
-Çë¼á³Ö±à³Ì£¡
+è¯·åšæŒç¼–ç¨‹ï¼
