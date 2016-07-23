@@ -10,7 +10,7 @@
 
 + 第一部分：[线程和执行器](ch4.md)
 + 第二部分：[同步和锁](ch5.md)
-+ 第三部分：[原子操作和 ConcurrentMap](ch6.md)
++ 第三部分：[原子变量和 ConcurrentMap](ch6.md)
 
 并发在Java5中首次被引入并在后续的版本中不断得到增强。在这篇文章中介绍的大部分概念同样适用于以前的Java版本。不过我的代码示例聚焦于Java8，大量使用lambda表达式和其他新特性。如果你对lambda表达式不属性，我推荐你首先阅读我的[Java 8 教程](http://winterbe.com/posts/2014/03/16/java-8-tutorial/)。
 
@@ -330,5 +330,5 @@ executor.scheduleWithFixedDelay(task, 0, 1, TimeUnit.SECONDS);
 
 + 第一部分：[线程和执行器](ch4.md)
 + 第二部分：[同步和锁](ch5.md)
-+ 第三部分：[原子操作和 ConcurrentMap](ch6.md)
++ 第三部分：[原子变量和 ConcurrentMap](ch6.md)
 

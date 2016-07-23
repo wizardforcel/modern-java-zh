@@ -10,7 +10,7 @@
 
 + 第一部分：[线程和执行器](ch4.md)
 + 第二部分：[同步和锁](ch5.md)
-+ 第三部分：[原子操作和 ConcurrentMap](ch6.md)
++ 第三部分：[原子变量和 ConcurrentMap](ch6.md)
 
 这篇文章中展示的中心概念也适用于Java的旧版本，然而代码示例适用于Java 8，并严重依赖于lambda表达式和新的并发特性。如果你还不熟悉lambda，我推荐你先阅读我的[Java 8 教程](ch1.md)。
 
@@ -362,4 +362,4 @@ Could not acquire semaphore
 
 + 第一部分：[线程和执行器](ch4.md)
 + 第二部分：[同步和锁](ch5.md)
-+ 第三部分：[原子操作和 ConcurrentMap](ch6.md)
++ 第三部分：[原子变量和 ConcurrentMap](ch6.md)
