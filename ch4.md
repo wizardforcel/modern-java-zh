@@ -8,12 +8,13 @@
 
 欢迎阅读我的Java8并发教程的第一部分。这份指南将会以简单易懂的代码示例来教给你如何在Java8中进行并发编程。这是一系列教程中的第一部分。在接下来的15分钟，你将会学会如何通过线程，任务（tasks）和 exector services来并行执行代码。
 
-- 第一部分：Threads和Executors
-- 第二部分：同步和锁
++ 第一部分：[线程和执行器](ch4.md)
++ 第二部分：[同步和锁](ch5.md)
++ 第三部分：[原子操作和 ConcurrentMap](ch6.md)
 
 并发在Java5中首次被引入并在后续的版本中不断得到增强。在这篇文章中介绍的大部分概念同样适用于以前的Java版本。不过我的代码示例聚焦于Java8，大量使用lambda表达式和其他新特性。如果你对lambda表达式不属性，我推荐你首先阅读我的[Java 8 教程](http://winterbe.com/posts/2014/03/16/java-8-tutorial/)。
 
-## Threads 和 Runnables
+## `Thread` 和 `Runnable`
 
 所有的现代操作系统都通过进程和线程来支持并发。进程是通常彼此独立运行的程序的实例，比如，如果你启动了一个Java程序，操作系统产生一个新的进程，与其他程序一起并行执行。在这些进程的内部，我们使用线程并发执行代码，因此，我们可以最大限度的利用CPU可用的核心（core）。
 
@@ -78,7 +79,7 @@ thread.start();
 
 接下来，让我们走进并发API中最重要的一部——executor services。
 
-## Executors
+## `Executor`
 
 并发API引入了`ExecutorService`作为一个在程序中直接使用Thread的高层次的替换方案。Executos支持运行异步任务，通常管理一个线程池，这样一来我们就不需要手动去创建新的线程。在不断地处理任务的过程中，线程池内部线程将会得到复用，因此，在我们可以使用一个executor service来运行和我们想在我们整个程序中执行的一样多的并发任务。
 
@@ -122,7 +123,7 @@ finally {
 
 executor通过等待指定的时间让当前执行的任务终止来“温柔的”关闭executor。在等待最长5分钟的时间后，execuote最终会通过中断所有的正在执行的任务关闭。
 
-### Callables 和 Futures
+### `Callable` 和 `Future`
 
 除了`Runnable`，executor还支持另一种类型的任务——`Callable`。Callables也是类似于runnables的函数接口，不同之处在于，Callable返回一个值。
 
@@ -174,7 +175,7 @@ future.get();
 你可能注意到我们这次创建executor的方式与上一个例子稍有不同。我们使用`newFixedThreadPool(1)`来创建一个单线程线程池的 execuot service。
 这等同于使用`newSingleThreadExecutor`不过使用第二种方式我们可以稍后通过简单的传入一个比1大的值来增加线程池的大小。
 
-### Timeouts
+### 超时
 
 任何`future.get()`调用都会阻塞，然后等待直到callable中止。在最糟糕的情况下，一个callable持续运行——因此使你的程序将没有响应。我们可以简单的传入一个时长来避免这种情况。
 
@@ -203,7 +204,7 @@ Exception in thread "main" java.util.concurrent.TimeoutException
 
 你可能已经猜到俄为什么会排除这个异常。我们指定的最长等待时间为1分钟，而这个callable在返回结果之前实际需要两分钟。
 
-### invokeAll
+### `invokeAll`
 
 Executors支持通过`invokeAll()`一次批量提交多个callable。这个方法结果一个callable的集合，然后返回一个future的列表。
 
@@ -230,7 +231,7 @@ executor.invokeAll(callables)
 
 在这个例子中，我们利用Java8中的函数流（stream）来处理`invokeAll()`调用返回的所有future。我们首先将每一个future映射到它的返回值，然后将每个值打印到控制台。如果你还不属性stream，可以阅读我的[Java8 Stream 教程](http://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/)。
 
-### invokeAny
+### `invokeAny`
 
 批量提交callable的另一种方式就是`invokeAny()`，它的工作方式与`invokeAll()`稍有不同。在等待future对象的过程中，这个方法将会阻塞直到第一个callable中止然后返回这一个callable的结果。
 
@@ -265,7 +266,7 @@ System.out.println(result);
 
 ForkJoinPools 在Java7时引入，将会在这个系列后面的教程中详细讲解。让我们深入了解一下 scheduled executors 来结束本次教程。
 
-## Scheduled Executors
+## `ScheduledExecutor`
 
 我们已经学习了如何在一个 executor 中提交和运行一次任务。为了持续的多次执行常见的任务，我们可以利用调度线程池。
 
@@ -325,6 +326,9 @@ executor.scheduleWithFixedDelay(task, 0, 1, TimeUnit.SECONDS);
 
 这是并发系列教程的第一部分。我推荐你亲手实践一下上面的代码示例。你可以从 [Github](https://github.com/winterbe/java8-tutorial) 上找到这篇文章中所有的代码示例，所以欢迎你fork这个仓库，并[收藏它](https://github.com/winterbe/java8-tutorial/stargazers)。
 
-我希望你会喜欢这篇文章。如果你有任何的问题都可以在下面评论或者通过 [Twitter](https://twitter.com/winterbe_) 给我回复。
+我希望你会喜欢这篇文章。如果你有任何的问题都可以在下面评论或者通过 [Twitter](https://twitter.com/winterbe_) 向我反馈。
 
++ 第一部分：[线程和执行器](ch4.md)
++ 第二部分：[同步和锁](ch5.md)
++ 第三部分：[原子操作和 ConcurrentMap](ch6.md)
 
