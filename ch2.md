@@ -96,7 +96,7 @@ Stream.of("a1", "a2", "a3")
     .ifPresent(System.out::println);  // 3
 ```
 
-基本数据流可以通过`maoToObj()`转换为对象数据流：
+基本数据流可以通过`mapToObj()`转换为对象数据流：
 
 ```java
 IntStream.range(1, 4)
