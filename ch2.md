@@ -96,7 +96,7 @@ Stream.of("a1", "a2", "a3")
     .ifPresent(System.out::println);  // 3
 ```
 
-基本数据流可以通过`maoToObj()`转换为对象数据流：
+基本数据流可以通过`mapToObj()`转换为对象数据流：
 
 ```java
 IntStream.range(1, 4)
@@ -543,7 +543,7 @@ foos.stream()
 IntStream.range(1, 4)
     .mapToObj(i -> new Foo("Foo" + i))
     .peek(f -> IntStream.range(1, 4)
-        .mapToObj(i -> new Bar("Bar" + i + " <- " f.name))
+        .mapToObj(i -> new Bar("Bar" + i + " <- " + f.name))
         .forEach(f.bars::add))
     .flatMap(f -> f.bars.stream())
     .forEach(b -> System.out.println(b.name));
