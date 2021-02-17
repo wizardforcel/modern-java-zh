@@ -73,7 +73,7 @@ Thread thread = new Thread(runnable);
 thread.start();
 ```
 
-当你运行上面的代码时，你会注意到在第一条打印语句和第二条打印语句之间存在一分钟的延迟。`TimeUnit`在处理单位时间时一个有用的枚举类。你可以通过调用`Thread.sleep(1000)`来达到同样的目的。
+当你运行上面的代码时，你会注意到在第一条打印语句和第二条打印语句之间存在一秒钟的延迟。`TimeUnit`在处理单位时间时一个有用的枚举类。你可以通过调用`Thread.sleep(1000)`来达到同样的目的。
 
 使用`Thread`类是很单调的且容易出错。由于并发API在2004年Java5发布的时候才被引入。这些API位于`java.util.concurrent`包下，包含很多处理并发编程的有用的类。自从这些并发API引入以来，在随后的新的Java版本发布过程中得到不断的增强，甚至Java8提供了新的类和方法来处理并发。
 
@@ -121,7 +121,7 @@ finally {
 }
 ```
 
-executor通过等待指定的时间让当前执行的任务终止来“温柔的”关闭executor。在等待最长5分钟的时间后，execuote最终会通过中断所有的正在执行的任务关闭。
+executor通过等待指定的时间让当前执行的任务终止来“温柔的”关闭executor。在等待最长5秒钟的时间后，executor最终会通过中断所有的正在执行的任务关闭。
 
 ### `Callable` 和 `Future`
 
@@ -172,7 +172,7 @@ executor.shutdownNow();
 future.get();
 ```
 
-你可能注意到我们这次创建executor的方式与上一个例子稍有不同。我们使用`newFixedThreadPool(1)`来创建一个单线程线程池的 execuot service。
+你可能注意到我们这次创建executor的方式与上一个例子稍有不同。我们使用`newFixedThreadPool(1)`来创建一个单线程线程池的 executor service。
 这等同于使用`newSingleThreadExecutor`不过使用第二种方式我们可以稍后通过简单的传入一个比1大的值来增加线程池的大小。
 
 ### 超时
@@ -202,7 +202,7 @@ Exception in thread "main" java.util.concurrent.TimeoutException
     at java.util.concurrent.FutureTask.get(FutureTask.java:205)
 ```
 
-你可能已经猜到俄为什么会排除这个异常。我们指定的最长等待时间为1分钟，而这个callable在返回结果之前实际需要两分钟。
+你可能已经猜到俄为什么会排除这个异常。我们指定的最长等待时间为1秒钟，而这个callable在返回结果之前实际需要两秒钟。
 
 ### `invokeAll`
 
@@ -246,7 +246,7 @@ Callable<String> callable(String result, long sleepSeconds) {
 }
 ```
 
-我们利用这个方法创建一组callable，这些callable拥有不同的执行时间，从1分钟到3分钟。通过`invokeAny()`将这些callable提交给一个executor，返回最快的callable的字符串结果-在这个例子中为任务2：
+我们利用这个方法创建一组callable，这些callable拥有不同的执行时间，从1秒钟到3秒钟。通过`invokeAny()`将这些callable提交给一个executor，返回最快的callable的字符串结果-在这个例子中为任务2：
 
 ```java
 ExecutorService executor = Executors.newWorkStealingPool();
@@ -272,7 +272,7 @@ ForkJoinPools 在Java7时引入，将会在这个系列后面的教程中详细�
 
 `ScheduledExecutorService`支持任务调度，持续执行或者延迟一段时间后执行。
 
-下面的实例，调度一个任务在延迟3分钟后执行：
+下面的实例，调度一个任务在延迟3秒钟后执行：
 
 ```java
 ScheduledExecutorService executor = 				Executors.newScheduledThreadPool(1);
@@ -288,7 +288,7 @@ System.out.printf("Remaining Delay: %sms", remainingDelay);
 
 调度一个任务将会产生一个专门的future类型——`ScheduleFuture`，它除了提供了Future的所有方法之外，他还提供了`getDelay()`方法来获得剩余的延迟。在延迟消逝后，任务将会并发执行。
 
-为了调度任务持续的执行，executors 提供了两个方法`scheduleAtFixedRate()`和`scheduleWithFixedDelay()`。第一个方法用来以固定频率来执行一个任务，比如，下面这个示例中，每分钟一次：
+为了调度任务持续的执行，executors 提供了两个方法`scheduleAtFixedRate()`和`scheduleWithFixedDelay()`。第一个方法用来以固定频率来执行一个任务，比如，下面这个示例中，每秒钟一次：
 
 ```java
 ScheduledExecutorService executor = 	Executors.newScheduledThreadPool(1);
@@ -302,7 +302,7 @@ executor.scheduleAtFixedRate(task, initialDelay, period, TimeUnit.SECONDS);
 
 另外，这个方法还接收一个初始化延迟，用来指定这个任务首次被执行等待的时长。
 
-请记住：`scheduleAtFixedRate()`并不考虑任务的实际用时。所以，如果你指定了一个period为1分钟而任务需要执行2分钟，那么线程池为了性能会更快的执行。
+请记住：`scheduleAtFixedRate()`并不考虑任务的实际用时。所以，如果你指定了一个period为1秒钟而任务需要执行2秒钟，那么线程池为了性能会更快的执行。
 
 在这种情况下，你应该考虑使用`scheduleWithFixedDelay()`。这个方法的工作方式与上我们上面描述的类似。不同之处在于等待时间 period 的应用是在一次任务的结束和下一个任务的开始之间。例如：
 
@@ -322,7 +322,7 @@ Runnable task = () -> {
 executor.scheduleWithFixedDelay(task, 0, 1, TimeUnit.SECONDS);
 ```
 
-这个例子调度了一个任务，并在一次执行的结束和下一次执行的开始之间设置了一个1分钟的固定延迟。初始化延迟为0，任务执行时间为0。所以我们分别在0s,3s,6s,9s等间隔处结束一次执行。如你所见，`scheduleWithFixedDelay()`在你不能预测调度任务的执行时长时是很有用的。
+这个例子调度了一个任务，并在一次执行的结束和下一次执行的开始之间设置了一个1秒钟的固定延迟。初始化延迟为0，任务执行时间为0。所以我们分别在0s,3s,6s,9s等间隔处结束一次执行。如你所见，`scheduleWithFixedDelay()`在你不能预测调度任务的执行时长时是很有用的。
 
 这是并发系列教程的第一部分。我推荐你亲手实践一下上面的代码示例。你可以从 [Github](https://github.com/winterbe/java8-tutorial) 上找到这篇文章中所有的代码示例，所以欢迎你fork这个仓库，并[收藏它](https://github.com/winterbe/java8-tutorial/stargazers)。
 
