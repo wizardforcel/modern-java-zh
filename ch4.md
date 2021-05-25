@@ -12,7 +12,7 @@
 + 第二部分：[同步和锁](ch5.md)
 + 第三部分：[原子变量和 ConcurrentMap](ch6.md)
 
-并发在Java5中首次被引入并在后续的版本中不断得到增强。在这篇文章中介绍的大部分概念同样适用于以前的Java版本。不过我的代码示例聚焦于Java8，大量使用lambda表达式和其他新特性。如果你对lambda表达式不属性，我推荐你首先阅读我的[Java 8 教程](http://winterbe.com/posts/2014/03/16/java-8-tutorial/)。
+并发在Java5中首次被引入并在后续的版本中不断得到增强。在这篇文章中介绍的大部分概念同样适用于以前的Java版本。不过我的代码示例聚焦于Java8，大量使用lambda表达式和其他新特性。如果你对lambda表达式不熟悉，我推荐你首先阅读我的[Java 8 教程](http://winterbe.com/posts/2014/03/16/java-8-tutorial/)。
 
 ## `Thread` 和 `Runnable`
 
@@ -127,7 +127,7 @@ executor通过等待指定的时间让当前执行的任务终止来“温柔的
 
 除了`Runnable`，executor还支持另一种类型的任务——`Callable`。Callables也是类似于runnables的函数接口，不同之处在于，Callable返回一个值。
 
-下面的lambda表达式定义了一个callable：在休眠一分钟后返回一个整数。
+下面的lambda表达式定义了一个callable：在休眠一秒钟后返回一个整数。
 
 ```java
 Callable<Integer> task = () -> {
@@ -155,7 +155,7 @@ System.out.println("future done? " + future.isDone());
 System.out.print("result: " + result);
 ```
 
-在将callable提交给exector之后，我们先通过调用`isDone()`来检查这个future是否已经完成执行。我十分确定这会发生什么，因为在返回那个整数之前callable会休眠一分钟、
+在将callable提交给exector之后，我们先通过调用`isDone()`来检查这个future是否已经完成执行。我十分确定这会发生什么，因为在返回那个整数之前callable会休眠一秒钟。
 
 在调用`get()`方法时，当前线程会阻塞等待，直到callable在返回实际的结果123之前执行完成。现在future执行完毕，我们可以在控制台看到如下的结果：
 
@@ -307,7 +307,7 @@ executor.scheduleAtFixedRate(task, initialDelay, period, TimeUnit.SECONDS);
 在这种情况下，你应该考虑使用`scheduleWithFixedDelay()`。这个方法的工作方式与上我们上面描述的类似。不同之处在于等待时间 period 的应用是在一次任务的结束和下一个任务的开始之间。例如：
 
 ```java
-ScheduledExecutorService executor = 		Executors.newScheduledThreadPool(1);
+ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
 
 Runnable task = () -> {
     try {

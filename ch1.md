@@ -1,10 +1,10 @@
 # Java 8 简明教程
 
-> 原文：[Java 8 Tutorial](http://winterbe.com/posts/2014/03/16/java-8-tutorial/) 
+> 原文：[Java 8 Tutorial](http://winterbe.com/posts/2014/03/16/java-8-tutorial/)
 
-> 译者：[ImportNew.com](http://www.importnew.com) - [黄小非](http://www.importnew.com/author/huangxiaofei)  
+> 译者：[ImportNew.com](http://www.importnew.com) - [黄小非](http://www.importnew.com/author/huangxiaofei)
 
-> 来源：[Java 8简明教程](http://www.importnew.com/10360.html)  
+> 来源：[Java 8简明教程](http://www.importnew.com/10360.html)
 
 &zwj;
 
@@ -804,7 +804,7 @@ System.out.println(zone2.getRules());
 
 #### LocalTime
 
-本地时间类表示一个没有指定时区的时间，例如，10 p.m.或者17：30:15，下面的例子会用上面的例子定义的时区创建两个本地时间对象。然后我们会比较两个时间，并计算它们之间的小时和分钟的不同。
+本地时间类表示一个没有指定时区的时间，例如，10 p.m.或者17:30:15，下面的例子会用上面的例子定义的时区创建两个本地时间对象。然后我们会比较两个时间，并计算它们之间的小时和分钟的不同。
 
 
 
